@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function dragStart() {
         colorBeingDragged = this.style.backgroundColor;
-        console.log(backgroundColor);
+        console.log('backgroundColor');
         console.log(this.id, 'dragstart');
     }
 
