@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'red',
         'yellow',
         'orange',
-        'purpl',
+        'purple',
         'green',
         'blue'
     ];
@@ -28,4 +28,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     createBoard();
+
+    // Drag the Candies
+
+        let colorBeingDragged;
+
+    squares.forEach(square => square.addEventListener('dragstart', dragStart));
+    squares.forEach(square => square.addEventListener('dragend', dragEnd));
+    squares.forEach(square => square.addEventListener('dragover', dragOver));
+    squares.forEach(square => square.addEventListener('dragenter', dragEnter));
+    squares.forEach(square => square.addEventListener('dragleave', dragLeave));
+    squares.forEach(square => square.addEventListener('drop', dragDrop));
+
+    function dragStart() {
+        colorBeingDragged = this.style.backgroundColor;
+        console.log(backgroundColor);
+        console.log(this.id, 'dragstart');
+    }
+
+    function dragOver() {
+        console.log(this.id, 'dragover');
+    }
+
+    function dragEnter() {
+        console.log(this.id, 'dragenter');
+    }
+
+    function dragLeave() {
+        console.log(this.id, 'dragleave');
+    }
+
+    function dragEnd() {
+        console.log(this.id, 'dragend');
+    }
+
+    function dragDrop() {
+        console.log(this.id, 'dragdrop');
+    }
 });
